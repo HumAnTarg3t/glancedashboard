@@ -1,0 +1,68 @@
+- name: Home
+  # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+  # hide-desktop-navigation: true
+  columns:
+    - size: small
+      widgets:
+        - type: custom-api
+          title: DNS Stats (Pi-hole)
+          cache: 10m
+          url: 
+          headers:
+            accept: application/json
+            sid: ${PIHOLE_SID}
+          template: |
+            <div class="dns-stats compact">
+              <div class="flex justify-between">
+                <div>
+                  <div class="size-h4 color-highlight">{{ .JSON.Int "queries.total" | formatNumber }}</div>
+                  <div class="size-h7">QUERIES</div>
+                </div>
+                <div>
+                  <div class="size-h4 color-negative">{{ .JSON.Int "queries.blocked" | formatNumber }}</div>
+                  <div class="size-h7">BLOCKED</div>
+                </div>
+                <div>
+                  <div class="size-h4 color-highlight">{{ printf "%0.1f" (.JSON.Float "queries.percent_blocked") }}%</div>
+                  <div class="size-h7">BLOCK %</div>
+                </div>
+              </div>
+            </div>
+    - size: full
+      widgets:
+        # Monitor is a standalone widget now so it displays immediately (not inside a group/tab)
+        - type: monitor
+          cache: 30s
+          title: Services
+          style: compact
+          sites:
+            - title: Asus Router
+              url: 
+              icon: si:asus
+            - title: Zyxel switch
+              url: 
+              icon: si:Zyxel
+            - title: Pi-Hole
+              url: 
+              icon: si:pihole
+            - title: Asutor NAS
+              url: 
+              icon: si:Asutor
+
+        # News sits directly below the monitor so it's full-width and visible
+        - type: rss
+          title: News
+          style: vertical-list
+          limit: 9
+          preserve-order: false
+          feeds:
+            - url: https://vg.no/rss/feed/?format=rss
+              limit: 1
+            - url: https://bt.no/rss
+              limit: 1
+            - url: https://nrk.no/toppsaker.rss
+              limit: 1
+    - size: small
+      widgets:
+        - type: calendar
+          first-day-of-week: monday

@@ -1,0 +1,86 @@
+/* ...existing code... */
+:root {
+  --bg: #0f1113;
+  --card: #16171a;
+  --muted: #9aa4a6;
+  --accent: #ffe36a;
+  --ok: #9ae86d;
+  --danger: #ff6b6b;
+  --glass: rgba(255,255,255,0.03);
+}
+
+body {
+  background: var(--bg);
+  color: #e6eef0;
+  font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system;
+}
+
+/* Card look */
+.widget, .card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--card);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Compact lists for service column */
+.widget .list, .widget ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.widget .service-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 6px;
+  border-radius: 6px;
+  transition: background .15s;
+}
+
+.widget .service-item:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+/* icon + name */
+.service-left {
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.service-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: linear-gradient(135deg,#2b2f33,#1a1c1f);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color: var(--accent);
+  font-weight:700;
+}
+
+/* status dot */
+.service-status {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 6px rgba(154,232,109,0.18);
+  margin-left: 10px;
+}
+
+/* small/side widgets */
+.sidebar .widget {
+  padding: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* scrollbar styling for long service list */
+.widget .scroll {
+  max-height: 60vh;
+  overflow: auto;
+}
