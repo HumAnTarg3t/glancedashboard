@@ -7,7 +7,7 @@
         - type: custom-api
           title: DNS Stats (Pi-hole)
           cache: 10m
-          url: 
+          url: ${DNS_STATS_PIHOLE_URL}
           headers:
             accept: application/json
             sid: ${PIHOLE_SID}
@@ -37,16 +37,16 @@
           style: compact
           sites:
             - title: Asus Router
-              url: 
+              url: ${ASUS_ROUTER_URL}
               icon: si:asus
             - title: Zyxel switch
-              url: 
+              url: ${ZYXEL_SWITCH_URL}
               icon: si:Zyxel
             - title: Pi-Hole
-              url: 
+              url: ${PIHOLE_URL}
               icon: si:pihole
             - title: Asutor NAS
-              url: 
+              url: ${ASUTOR_NAS_URL}
               icon: si:Asutor
 
         # News sits directly below the monitor so it's full-width and visible
