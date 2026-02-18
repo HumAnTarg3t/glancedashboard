@@ -48,6 +48,12 @@
             - title: Asutor NAS
               url: ${ASUTOR_NAS_URL}
               icon: si:Asutor
+            - title: Immich
+              url: ${IMMICH_URL}
+              icon: si:Immich
+            - title: Portainer
+              url: ${PORTAINER_URL}
+              icon: si:portainer
 
         # News sits directly below the monitor so it's full-width and visible
         - type: rss
