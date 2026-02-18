@@ -1,4 +1,4 @@
-- name: Home
+- name: Hjem
   # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
   # hide-desktop-navigation: true
   columns:
@@ -33,7 +33,7 @@
         # Monitor is a standalone widget now so it displays immediately (not inside a group/tab)
         - type: monitor
           cache: 30s
-          title: Services
+          title: Tjenester
           style: compact
           sites:
             - title: Asus Router
@@ -57,7 +57,7 @@
 
         # News sits directly below the monitor so it's full-width and visible
         - type: rss
-          title: News
+          title: Nyheter
           style: vertical-list
           limit: 9
           preserve-order: false
