@@ -63,11 +63,11 @@
           preserve-order: false
           feeds:
             - url: https://vg.no/rss/feed/?format=rss
-              limit: 1
+              limit: 2
             - url: https://bt.no/rss
-              limit: 1
+              limit: 2
             - url: https://nrk.no/toppsaker.rss
-              limit: 1
+              limit: 2
     - size: small
       widgets:
         - type: calendar
