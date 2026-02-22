@@ -51,6 +51,9 @@
             - title: Immich
               url: ${IMMICH_URL}
               icon: si:Immich
+            # - title: Portainer NAS
+            #   url: ${PORTAINERNAS_URL}
+            #   icon: si:portainer
             - title: Portainer
               url: ${PORTAINER_URL}
               icon: si:portainer
